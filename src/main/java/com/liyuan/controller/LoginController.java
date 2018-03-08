@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
 	@RequestMapping("/login")
-	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
+	public String login(@RequestParam(name="username",required=true) String userName, @RequestParam(value="password",defaultValue="abc") String pwd,
 			Model model) {
-        System.out.println("login登录");
-		if (username.equals("admin") && password.equals("admin")) {
-			model.addAttribute("username", username);
+        System.out.println("login登录,username"+userName +" ,password:"+pwd);
+		if (userName.equals("admin") && pwd.equals("admin")) {
+			model.addAttribute("username", userName);
 			return "success";
 		} else {
-			model.addAttribute("username", username);
+			model.addAttribute("username", userName);
 			return "error";
 		}
 	}

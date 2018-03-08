@@ -20,6 +20,6 @@
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
         <!-- / 表示所有的请求都要经过此serlvet -->
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>

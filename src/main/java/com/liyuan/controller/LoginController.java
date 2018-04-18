@@ -11,7 +11,7 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String login(@RequestParam(name="username",required=true) String userName, @RequestParam(value="password",defaultValue="abc") String pwd,
 			Model model) {
-        System.out.println("login登录,username"+userName +" ,password:"+pwd);
+        System.out.println("login登录,username:"+userName +" ,password:"+pwd);
 		if (userName.equals("admin") && pwd.equals("admin")) {
 			model.addAttribute("username", userName);
 			return "success";

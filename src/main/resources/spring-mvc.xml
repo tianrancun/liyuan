@@ -11,6 +11,15 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
     
+    
+<!--     注解处理器映射器     -->
+<!--     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean> -->
+     
+<!--     注解处理器适配器     -->
+<!--     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>   -->
+ 
+    <!--使用mvc:annotation-driven可以代替上面的映射器和适配器这里面会默认加载很多参数绑定方法，比如json转换解析器就默认加载，所以优先使用下面的配置-->
+ 
     <!-- 默认的注解映射的支持 -->  
     <mvc:annotation-driven />  
     

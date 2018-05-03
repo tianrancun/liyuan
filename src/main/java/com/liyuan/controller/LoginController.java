@@ -1,5 +1,6 @@
 package com.liyuan.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +12,7 @@ import com.liyuan.service.UserService;
 
 @Controller 
 public class LoginController {
-
+    private static final Logger logger = Logger.getLogger(LoginController.class);
     @Autowired
     private UserService userService;
     
@@ -19,6 +20,7 @@ public class LoginController {
 	public String login(@RequestParam(name="username",required=true) String userName, @RequestParam(value="password",defaultValue="abc") String pwd,
 			Model model) {
         System.out.println("login登录,username:"+userName +" ,password:"+pwd);
+        logger.info ("===>login登录,username:"+userName +" ,password:"+pwd);
         UserVO userVO=userService.findByUserNameAndPwd (userName, pwd);
 		if (null!=userVO) {
 			model.addAttribute("username", userName);
